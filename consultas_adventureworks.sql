@@ -1,0 +1,11 @@
+## MUESTRA LA LISTA DE LAS BICICLETAS MAS CARAS DE LA EMPRESA ORDENADAS DE MAYOR A MENOR ##
+SELECT Name, ProductNumber, ListPrice 
+FROM Product 
+WHERE ListPrice > 1000 
+ORDER BY ListPrice DESC;
+
+## LISTA DE CLIENTES ##
+SELECT CompanyName, FirstName, LastName, Phone
+FROM Customer
+ORDER BY CompanyName ASC
+

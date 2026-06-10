@@ -26,3 +26,24 @@ ON Customer.CustomerID = CustomerAddress.CustomerID;
 SELECT CustomerID, COUNT(AddressID) AS TOTALDIRECCION
 FROM CustomerAddress
 GROUP BY customerid;
+
+-- Cómo automatizar el acceso al reporte frecuente de clientes con dirección sin reescribir el código completo?
+
+CREATE VIEW Vista_Clientes_Direccion AS
+SELECT Customer.CustomerID, Customer.FirstName, Customer.LastName, CustomerAddress.AddressID
+FROM Customer
+INNER JOIN CustomerAddress 
+ON Customer.CustomerID = CustomerAddress.CustomerID;
+
+SELECT * FROM Vista_Clientes_Direccion;
+
+-- Cómo optimizar la base de datos para que las búsquedas de productos por color de la campaña de marketing no saturen el servidor?
+
+CREATE INDEX idx_product_color 
+ON Product (Color);
+
+-- Como borrar es indice?
+
+DROP INDEX idx_product_color
+
+
